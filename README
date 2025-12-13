@@ -6,6 +6,10 @@ This project simulates how a real truck works using object-oriented programming 
 Features
 The truck has a color, engine quality, tire quality, gas capacity, and a driver. It can be driven, which decreases gas and wear on the engine and tires. The truck can turn its headlights on or off for night driving. Rain causes the windshield wipers to turn on and reduces tire quality while making the truck dirty. A crash heavily damages the truck and turns off all systems. The project uses overloaded constructors to allow different ways to create a truck. Each class includes a toString method to easily print the current state of the objects. A tester class demonstrates all major behaviors.
 
+Authors:
+Matthew Virtue
+Ai - copilot, Chatgpt
+
 How the Code Works
 The program consists of three main classes: Truck, Person, and Main.
 
@@ -31,3 +35,4 @@ Author Information
 Authors: GitHub Copilot AI and Nolan Runge
 
 What I learned: Through this project, I learned how to design interacting classes, use constructors effectively, and simulate real-world objects in code. I also improved my understanding of encapsulation and object composition.
+
