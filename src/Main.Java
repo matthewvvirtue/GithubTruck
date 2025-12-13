@@ -1,4 +1,13 @@
+/**
+ * Tester class for the Truck simulation project.
+ */
 public class Main {
+
+    /**
+     * The main method that runs the program.
+     *
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
 
         // Create Person objects
@@ -7,13 +16,13 @@ public class Main {
 
         // Create Truck objects using both constructors
         Truck truck1 = new Truck("Red", 100, 100, 60, driver1);
-        Truck truck2 = new Truck("Blue", driver2);  // uses overloaded constructor
+        Truck truck2 = new Truck("Blue", driver2);
 
-        // Print trucks (calls toString)
+        // Print trucks
         System.out.println(truck1);
         System.out.println(truck2);
 
-        // Call behavior methods
+        // Demonstrate behavior methods
         truck1.drive();
         truck2.drive();
         truck1.night();
@@ -21,3 +30,4 @@ public class Main {
         truck1.crash();
     }
 }
+
