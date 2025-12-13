@@ -1,0 +1,33 @@
+Truck Simulation Project
+
+Project Description
+This project simulates how a real truck works using object-oriented programming in Java. The program models a truck with features such as driving, turning headlights on and off, reacting to rain, and crashing. As the program runs, the truck’s condition changes based on actions taken. The goal of this project is to represent a real-world vehicle using classes, objects, constructors, methods, and interactions between objects.
+
+Features
+The truck has a color, engine quality, tire quality, gas capacity, and a driver. It can be driven, which decreases gas and wear on the engine and tires. The truck can turn its headlights on or off for night driving. Rain causes the windshield wipers to turn on and reduces tire quality while making the truck dirty. A crash heavily damages the truck and turns off all systems. The project uses overloaded constructors to allow different ways to create a truck. Each class includes a toString method to easily print the current state of the objects. A tester class demonstrates all major behaviors.
+
+How the Code Works
+The program consists of three main classes: Truck, Person, and Main.
+
+The Truck class represents a real truck. It contains state variables such as color, engine quality, tire quality, gas capacity, headlight status, windshield wiper status, and a driver. The driver is represented by a Person object, which demonstrates object composition. The Truck class includes two constructors: one that allows all values to be set and an overloaded constructor that assigns average default values. The class includes methods that allow the truck to drive, react to night conditions, react to rain, and simulate a crash. The toString method prints the truck’s current condition and driver.
+
+The Person class represents the driver of the truck. It stores the driver’s name and includes getter and setter methods. The toString method returns the driver’s name so it can be displayed when printing the truck.
+
+The Main class contains the main method and acts as the tester. It creates Person objects and Truck objects using both constructors. It prints each truck using System.out.println and calls several behavior methods to show how the truck changes over time.
+
+How the Classes Interact
+The Truck contains a Person object, which is an example of composition. The Truck uses the Person object to display who is driving and to simulate real-world ownership and control of the vehicle.
+
+Object-Oriented Programming Concepts Used
+This project demonstrates encapsulation by using private instance variables with public getters and setters. It uses constructor overloading to create trucks in different ways. Object composition is shown through the Truck having a Person driver. Behavioral methods are used to simulate real-world truck actions.
+
+How to Run the Program
+Make sure Person.java, Truck.java, and Main.java are in the same folder. Compile the files using javac *.java. Run the program using java Main. When the program runs, you will see the trucks printed, driving behavior, headlights turning on, rain effects, and a crash simulation.
+
+Development Process
+The main goals of this project were to practice creating multiple classes, writing overloaded constructors, and modeling real-world behavior using methods. Challenges included managing state changes such as preventing negative values and keeping the truck’s condition consistent after events like rain and crashes. If more time were available, improvements could include fuel refilling, repairs, or user input.
+
+Author Information
+Authors: GitHub Copilot AI and Nolan Runge
+
+What I learned: Through this project, I learned how to design interacting classes, use constructors effectively, and simulate real-world objects in code. I also improved my understanding of encapsulation and object composition.
