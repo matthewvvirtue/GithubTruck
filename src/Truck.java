@@ -1,26 +1,38 @@
 /**
  * Represents a Truck with various attributes such as color, engine quality,
- * tire quality, gas capacity, and its driver.
+ * tire quality, gas capacity, and a driver.
  */
 public class Truck {
 
-    // Instance variables
+    /** The color of the truck */
     private String color;
-    private int engineQuality;     // 1–100 scale
-    private int tireQuality;       // 1–100 scale
-    private int gasCapacity;       // in liters
+
+    /** Engine quality on a 1–100 scale */
+    private int engineQuality;
+
+    /** Tire quality on a 1–100 scale */
+    private int tireQuality;
+
+    /** Gas capacity in liters */
+    private int gasCapacity;
+
+    /** Indicates whether the headlights are on */
     private boolean headlightsOn;
+
+    /** Indicates whether the windshield wipers are on */
     private boolean windshieldWipersOn;
-    private Person driver;         // secondary object class
+
+    /** The driver of the truck */
+    private Person driver;
 
     /**
-     * Constructs a new Truck object with all attributes specified.
+     * Constructs a Truck with all attributes specified.
      *
-     * @param color              The color of the truck.
-     * @param engineQuality      The engine quality (1–100 scale).
-     * @param tireQuality        The tire quality (1–100 scale).
-     * @param gasCapacity        The gas capacity (liters).
-     * @param driver             The driver of the truck.
+     * @param color the color of the truck
+     * @param engineQuality the engine quality (1–100)
+     * @param tireQuality the tire quality (1–100)
+     * @param gasCapacity the gas capacity in liters
+     * @param driver the driver of the truck
      */
     public Truck(String color, int engineQuality, int tireQuality,
                  int gasCapacity, Person driver) {
@@ -35,113 +47,125 @@ public class Truck {
     }
 
     /**
-     * Overloaded constructor that creates a basic truck with a color and driver.
-     * Other values default to “average”.
+     * Constructs a Truck with a color and driver.
+     * Other values are set to average defaults.
      *
-     * @param color  The truck’s color.
-     * @param driver The driver of the truck.
+     * @param color the color of the truck
+     * @param driver the driver of the truck
      */
     public Truck(String color, Person driver) {
         this(color, 80, 80, 40, driver);
     }
 
-    // ---------------- Getters & Setters ----------------
-
+    /**
+     * Returns the color of the truck.
+     *
+     * @return the truck's color
+     */
     public String getColor() {
         return color;
     }
 
+    /**
+     * Sets the color of the truck.
+     *
+     * @param color the new color
+     */
     public void setColor(String color) {
         this.color = color;
     }
 
+    /**
+     * Returns the engine quality.
+     *
+     * @return engine quality
+     */
     public int getEngineQuality() {
         return engineQuality;
     }
 
+    /**
+     * Sets the engine quality.
+     *
+     * @param engineQuality the new engine quality
+     */
     public void setEngineQuality(int engineQuality) {
         this.engineQuality = engineQuality;
     }
 
+    /**
+     * Returns the tire quality.
+     *
+     * @return tire quality
+     */
     public int getTireQuality() {
         return tireQuality;
     }
 
+    /**
+     * Sets the tire quality.
+     *
+     * @param tireQuality the new tire quality
+     */
     public void setTireQuality(int tireQuality) {
         this.tireQuality = tireQuality;
     }
 
+    /**
+     * Returns the gas capacity.
+     *
+     * @return gas capacity in liters
+     */
     public int getGasCapacity() {
         return gasCapacity;
     }
 
+    /**
+     * Sets the gas capacity.
+     *
+     * @param gasCapacity the new gas capacity
+     */
     public void setGasCapacity(int gasCapacity) {
         this.gasCapacity = gasCapacity;
     }
 
-    public boolean isHeadlightsOn() {
-        return headlightsOn;
-    }
-
-    public void setHeadlightsOn(boolean headlightsOn) {
-        this.headlightsOn = headlightsOn;
-    }
-
-    public boolean isWindshieldWipersOn() {
-        return windshieldWipersOn;
-    }
-
-    public void setWindshieldWipersOn(boolean windshieldWipersOn) {
-        this.windshieldWipersOn = windshieldWipersOn;
-    }
-
-    public Person getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Person driver) {
-        this.driver = driver;
-    }
-
-    // ---------------- Behavior Methods ----------------
-
     /**
-     * Simulates driving the truck. Decreases gas, tire quality, and engine quality.
+     * Simulates driving the truck.
+     * Gas, tire quality, and engine quality decrease.
      */
     public void drive() {
         if (gasCapacity > 0 && engineQuality > 0 && tireQuality > 0) {
             gasCapacity -= 10;
             tireQuality -= 5;
             engineQuality -= 3;
-            System.out.println(driver.getName() + " is driving. Gas: " 
-                + gasCapacity + ", Tire Quality: " + tireQuality 
-                + ", Engine Quality: " + engineQuality);
+            System.out.println(driver.getName() + " is driving.");
         } else {
             System.out.println("The truck cannot drive. Maintenance needed.");
         }
     }
 
     /**
-     * Toggles the headlights.
+     * Toggles the headlights on or off.
      */
     public void night() {
         headlightsOn = !headlightsOn;
-        System.out.println("Headlights are now " + (headlightsOn ? "ON" : "OFF"));
+        System.out.println("Headlights are now " +
+                (headlightsOn ? "ON" : "OFF"));
     }
 
     /**
-     * Simulates rain, which activates wipers and reduces tire quality.
+     * Simulates rainy conditions.
+     * Windshield wipers turn on and tire quality decreases.
      */
     public void rain() {
         windshieldWipersOn = true;
         tireQuality -= 2;
         color = "Dirty";
-        System.out.println("It’s raining. Wipers ON. Tire Quality: " 
-            + tireQuality + ", Color: " + color);
+        System.out.println("It is raining. Wipers are on.");
     }
 
     /**
-     * Simulates a crash that damages the truck heavily.
+     * Simulates a crash that heavily damages the truck.
      */
     public void crash() {
         color = "Damaged";
@@ -150,16 +174,20 @@ public class Truck {
         gasCapacity -= 20;
         headlightsOn = false;
         windshieldWipersOn = false;
-
         System.out.println("Crash! The truck is damaged.");
     }
 
     /**
-     * Returns a text description of the truck.
+     * Returns a description of the truck.
+     *
+     * @return a string describing the truck
      */
     @Override
     public String toString() {
-        return "Truck (" + color + ", Engine: " + engineQuality + ", Tires: "
-                + tireQuality + ", Gas: " + gasCapacity + "), driven by " + driver;
+        return "Truck (" + color + ", Engine: " + engineQuality +
+                ", Tires: " + tireQuality +
+                ", Gas: " + gasCapacity +
+                "), driven by " + driver;
     }
 }
+
