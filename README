@@ -21,6 +21,9 @@ The Truck contains a Person object, which is an example of composition. The Truc
 Object-Oriented Programming Concepts Used
 This project demonstrates encapsulation by using private instance variables with public getters and setters. It uses constructor overloading to create trucks in different ways. Object composition is shown through the Truck having a Person driver. Behavioral methods are used to simulate real-world truck actions.
 
+Class Diagram:
+https://drive.google.com/file/d/1qRKz1l40DEXZjTUxVeRFtpnDfJDFrKY6/view?usp=sharing 
+
 How to Run the Program
 Make sure Person.java, Truck.java, and Main.java are in the same folder. Compile the files using javac *.java. Run the program using java Main. When the program runs, you will see the trucks printed, driving behavior, headlights turning on, rain effects, and a crash simulation.
 
@@ -31,5 +34,6 @@ Author Information
 Authors: GitHub Copilot AI and Matthew Virtue
 
 What I learned: Through this project, I learned how to design interacting classes, use constructors effectively, and simulate real-world objects in code. I also improved my understanding of encapsulation and object composition.
+
 
 
